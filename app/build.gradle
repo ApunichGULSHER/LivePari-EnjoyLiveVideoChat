@@ -1,4 +1,3 @@
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -20,19 +19,15 @@ android {
 
     buildTypes {
         release {
-            buildTypes {
-                release {
-                    firebaseCrashlytics {
-                        mappingFileUploadEnabled false
-                    }
-                    minifyEnabled true
-                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-                }
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
             }
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
     }
     compileOptions {
