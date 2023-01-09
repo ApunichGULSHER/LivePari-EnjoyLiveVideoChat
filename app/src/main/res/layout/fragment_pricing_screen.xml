@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="price"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
+        tools:context=".activities.MainScreens.PricingScreen">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sans_bold"
+            android:gravity="center"
+            android:text="Standard Meet: Free"
+            android:textColor="@color/indigo_500"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sans_bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="@{`Royal Meet: ₹`+price+`/Minute`}"
+            android:textColor="@color/indigo_500"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_3"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:fontFamily="@font/sans_bold"
+            android:layout_marginTop="100dp"
+            android:text="@string/pricing_trial_text"/>
+        <TextView
+            android:id="@+id/billing_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sans_bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/dark_3"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</layout>

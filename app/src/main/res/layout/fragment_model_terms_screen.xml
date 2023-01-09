@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        tools:context=".activities.RegisterScreens.ModelTermsScreen">
+
+        <soup.neumorphism.NeumorphImageView
+            android:id="@+id/back_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/back_icon" />
+
+        <RelativeLayout
+            android:id="@+id/terms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/back_button"
+            android:layout_above="@id/agree_button"
+            android:layout_marginHorizontal="10dp" >
+
+            <ImageView
+                android:id="@+id/money_icon"
+                android:layout_width="75dp"
+                android:layout_height="85dp"
+                android:src="@drawable/balance_icon"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="75dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_alignTop="@id/money_icon"
+                android:layout_alignBottom="@id/money_icon"
+                android:gravity="center"
+                android:layout_marginStart="135dp"
+                android:layout_alignParentStart="true"
+                android:textSize="26sp"
+                android:textColor="@color/red_900"
+                android:text="@string/huge_earnings"
+                android:fontFamily="@font/dubai_bold"
+                />
+            <ImageView
+                android:id="@+id/model_icon"
+                android:layout_width="75dp"
+                android:layout_height="85dp"
+                android:src="@drawable/model_icon"
+                android:layout_below="@id/money_icon"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="75dp"
+                android:layout_marginEnd="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
+                android:textSize="26sp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="135dp"
+                android:layout_alignTop="@id/model_icon"
+                android:gravity="center"
+                android:layout_alignBottom="@id/model_icon"
+                android:textColor="@color/purple_700"
+                android:text="@string/privacy_in_hands"
+                android:fontFamily="@font/dubai_bold"
+                />
+            <ImageView
+                android:id="@+id/remote_icon"
+                android:layout_width="75dp"
+                android:layout_height="85dp"
+                android:src="@drawable/working_icon"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/model_icon"
+                android:layout_marginTop="75dp"
+                android:layout_marginStart="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:textSize="26sp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="135dp"
+                android:layout_alignTop="@id/remote_icon"
+                android:layout_alignBottom="@id/remote_icon"
+                android:gravity="center"
+                android:textColor="@color/indigo_500"
+                android:text="@string/earn_from_home"
+                android:fontFamily="@font/dubai_bold"
+                />
+        </RelativeLayout>
+
+        <soup.neumorphism.NeumorphButton
+            style="@style/Widget.Neumorph.Button"
+            android:id="@+id/agree_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/sans_bold"
+            android:text="Next"
+            android:textColor="@color/dark_3"
+            android:textSize="16sp"
+            />
+
+       </RelativeLayout>
+</layout>

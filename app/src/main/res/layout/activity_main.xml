@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.blogspot.bunnylists.maate.models.User" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.MainScreens.MainActivity">
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/white"
+                android:fontFamily="@font/sans_bold"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:text="@{`Hey `+user.name}"
+                android:textColor="@color/dark_2"
+                android:textSize="24sp"
+                tools:text="Hey name" />
+
+            <TextView
+                android:id="@+id/appLogo"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="40dp"
+                android:background="@color/white"
+                android:fontFamily="@font/sans_bold"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:text="welcome back"
+                android:textColor="@color/alert"
+                android:textSize="16sp" />
+
+
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="?attr/actionBarSize"
+                android:background="@color/white" />
+
+            <me.ibrahimsn.lib.SmoothBottomBar
+                android:id="@+id/bottomBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentBottom="true"
+                app:activeItem="1"
+                app:backgroundColor="@color/white"
+                app:iconSize="20dp"
+                app:iconTint="@color/gray_500"
+                app:iconTintActive="@color/white"
+                app:indicatorColor="@color/indigo_500"
+                app:indicatorRadius="18dp"
+                app:itemFontFamily="@font/sans_bold"
+                app:menu="@menu/lobby_icons"
+                app:sideMargins="25dp"
+                app:textColor="@color/white"
+                app:textSize="14sp" />
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register_nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.blogspot.bunnylists.maate.activities.RegisterScreens.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.blogspot.bunnylists.maate.activities.RegisterScreens.LoginScreen"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreen_to_TC_Policy_Screen"
+            app:destination="@id/TC_Policy_Screen" />
+        <action
+            android:id="@+id/action_loginScreen_to_modelTermsScreen"
+            app:destination="@id/modelTermsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerAsModelScreen"
+        android:name="com.blogspot.bunnylists.maate.activities.RegisterScreens.RegisterAsModelScreen"
+        android:label="fragment_register_as_model_screen"
+        tools:layout="@layout/fragment_register_as_model_screen" >
+        <action
+            android:id="@+id/action_registerAsModelScreen_to_TC_Policy_Screen"
+            app:destination="@id/TC_Policy_Screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/TC_Policy_Screen"
+        android:name="com.blogspot.bunnylists.maate.activities.RegisterScreens.TC_Policy_Screen"
+        android:label="TC_Policy_Screen" />
+    <fragment
+        android:id="@+id/modelTermsScreen"
+        android:name="com.blogspot.bunnylists.maate.activities.RegisterScreens.ModelTermsScreen"
+        android:label="ModelTermsScreen" >
+        <action
+            android:id="@+id/action_modelTermsScreen_to_registerAsModelScreen"
+            app:destination="@id/registerAsModelScreen"
+            app:popUpTo="@id/loginScreen" />
+    </fragment>
+
+</navigation>

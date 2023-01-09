@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/freeLobby"
+        android:icon="@drawable/free"
+        android:title="Free" />
+    <item android:id="@+id/royalLobby"
+        android:icon="@drawable/crown"
+        android:title="Royal" />
+    <item android:id="@+id/profile"
+        android:icon="@drawable/account_icon"
+        android:title="Profile" />
+</menu>

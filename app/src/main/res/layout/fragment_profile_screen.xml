@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.blogspot.bunnylists.maate.models.User" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        tools:ignore="ExtraText">
+
+        //ProfilePicture
+        <soup.neumorphism.NeumorphCardView
+            style="@style/Widget.Neumorph.CardView"
+            app:neumorph_lightSource="rightTop"
+            app:neumorph_shadowElevation="4dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="40dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/profilePic"
+                imageFromUrl="@{user.profilePic}"
+                android:scaleType="centerCrop"
+                android:background="@drawable/account_icon"/>
+
+        </soup.neumorphism.NeumorphCardView>
+
+
+        //BalanceView
+        <LinearLayout
+            android:id="@+id/balanceRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sans_bold"
+                android:text="@string/balance"
+                android:textColor="@color/indigo_900"
+                android:textSize="36sp" />
+
+            <soup.neumorphism.NeumorphTextView
+                style="@style/Widget.Neumorph.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sans_bold"
+                android:text="@{` ₹`+user.balance}"
+                android:textColor="@color/indigo_900"
+                android:textSize="40sp"
+                tools:text=" 50" />
+        </LinearLayout>
+
+        //MainFrame
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:orientation="vertical">
+
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:id="@+id/addBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                app:cornerRadius="12dp"
+                app:neumorph_lightSource="rightTop"
+                app:neumorph_shadowElevation="2dp"
+                android:fontFamily="@font/sans_bold"
+                android:text="Add Balance"
+                app:neumorph_backgroundColor="@color/indigo_500"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:id="@+id/withdraw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cornerRadius="12dp"
+                app:neumorph_shadowElevation="2dp"
+                android:fontFamily="@font/sans_bold"
+                android:text="Withdraw"
+                android:textColor="@color/dark_3"
+                app:neumorph_lightSource="rightTop"
+                android:textAllCaps="false"
+                android:textSize="18sp"/>
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:id="@+id/account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cornerRadius="12dp"
+                app:neumorph_lightSource="rightTop"
+                android:fontFamily="@font/sans_bold"
+                app:neumorph_shadowElevation="2dp"
+                android:text="Account"
+                android:textColor="@color/dark_3"
+                android:textAllCaps="false"
+                android:textSize="18sp"/>
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:id="@+id/pricing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cornerRadius="12dp"
+                app:neumorph_lightSource="rightTop"
+                android:fontFamily="@font/sans_bold"
+                app:neumorph_shadowElevation="2dp"
+                android:text="Pricing"
+                android:textColor="@color/dark_3"
+                android:textAllCaps="false"
+                android:textSize="18sp"/>
+            <soup.neumorphism.NeumorphButton
+                style="@style/Widget.Neumorph.Button"
+                android:id="@+id/report"
+                android:layout_width="match_parent"
+                app:neumorph_lightSource="rightTop"
+                android:layout_height="wrap_content"
+                app:neumorph_shadowElevation="2dp"
+                app:cornerRadius="12dp"
+                android:fontFamily="@font/sans_bold"
+                android:text="Report an issue"
+                android:textColor="@color/dark_3"
+                android:textAllCaps="false"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

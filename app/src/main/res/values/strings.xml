@@ -1,0 +1,326 @@
+<resources>
+    <string name="app_name">LivePari</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_no_account_signup">Don\'t have an account? <font color="#2196F3">Register Now</font></string>
+    <string name="terms_note"><font color="#2196F3">Terms &amp; conditions</font> and <font color="#2196F3">Privacy Policy</font></string>
+    <string name="we_need_selfie">Prove you\'re the person in your profile by recording a selfie video.</string>
+    <string name="balance">Balance :</string>
+    <string name="Test_Banner_AD">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="Live_Banner_AD">ca-app-pub-7649900603545609/5044263958</string>
+    <string name="Test_Interstitial_AD">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="Live_Interstitial_AD">ca-app-pub-7649900603545609/6869639065</string>
+    <string name="Admob_App_ID">ca-app-pub-7649900603545609~2867594157</string>
+    <string name="Agora_App_ID">97ae0d4c726c4684b197905ac64d50d3</string>
+    <string name="ifsc_hint">IFSC</string>
+    <string name="account_number_hint">Account Number</string>
+    <string name="account_holder_name_hint">Account Holder Name</string>
+    <string name="amount_hint">Amount</string>
+    <string name="model_terms">Your name or any other personal information will be kept secret and we will not give it to any other user\n</string>
+    <string name="pricing_trial_text">Starting 10 seconds of every call will be trial. Billing starts after trial 🥳.</string>
+    <string name="privacy_in_hands">Privacy in Hands</string>
+    <string name="earn_from_home">Earn from Home 🥳</string>
+    <string name="huge_earnings">Huge Earnings 🤑</string>
+    <string name="normal_user_billing_note">The amount will be deducted from your balance on STARTING of the minute for every minute!</string>
+    <string name="model_billing_note">The amount will be credited to your balance on ENDING of the minute for every minute!</string>
+
+
+    <string name="terms">**Terms &amp; Conditions**\n
+    \n
+    By downloading or using the app, these terms will automatically apply to you –\n you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages or make derivative versions. The app itself, and all the trademarks, copyright, database rights, and other intellectual property rights related to it, still belong to its.Gulsher.\n
+    \n
+    its.Gulsher is committed to ensuring that the app is as useful and efficient as possible.\n For that reason, we reserve the right to make changes to the app or to charge for its services, at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.\n
+    \n
+    The LivePari app stores and processes personal data\n that you have provided to us, to provide my Service. It’s your responsibility to keep your phone and access to the app secure. We therefore recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. It could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features and it could mean that the LivePari app won’t work properly or at all.\n
+    \n
+    You should be aware that there are certain things that its.Gulsher will not take responsibility for.\n Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi or provided by your mobile network provider, but its.Gulsher cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi, and you don’t have any of your data allowance left.\n
+    \n
+    If you’re using the app outside of an area\n with Wi-Fi, you should remember that the terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third-party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e. region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume that you have received permission from the bill payer for using the app.\n
+    \n
+    With respect to its.Gulsher’s responsibility for your use of the app,\n when you’re using the app, it’s important to bear in mind that although we endeavor to ensure that it is updated and correct at all times, we do rely on third parties to provide information to us so that we can make it available to you. its.Gulsher accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on this functionality of the app.\n
+    \n
+    At some point, we may wish to update the app.\n The app is currently available on Android – the requirements for the system(and for any additional systems we decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. its.Gulsher does not promise that it will always update the app so that it is relevant to you and/or works with the Android version that you have installed on your device. However, you promise to always accept updates to the application when offered to you, We may also wish to stop providing the app, and may terminate use of it at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device.\n
+    \n
+    I may update our Terms and Conditions from time to time.\n Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page.\n
+    \n
+    These terms and conditions are effective as of January 01, 2023\n
+    \n
+    **Contact Us**\n
+    If you have any questions or suggestions about my Terms and Conditions, do not hesitate to contact me at care.livepari@gmail.com.\n
+    <font color="#2196F3">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</font>
+    \n\n\n\n
+        **Privacy Policy**\n
+    \n
+    Last updated: January 01, 2023\n
+    \n
+    This Privacy Policy describes Our policies and procedures on the collection,
+    use and disclosure of Your information when You use the Service and tells You
+    about Your privacy rights and how the law protects You.\n
+    \n
+    We use Your Personal data to provide and improve the Service. By using the
+    Service, You agree to the collection and use of information in accordance with
+    this Privacy Policy.\n
+    \n
+    Interpretation and Definitions\n
+    \n
+    Interpretation\n
+    \n
+    The words of which the initial letter is capitalized have meanings defined
+    under the following conditions. The following definitions shall have the same
+    meaning regardless of whether they appear in singular or in plural.\n
+    \n
+    Definitions\n
+    \n
+    For the purposes of this Privacy Policy:\n
+    \n
+  * Account means a unique account created for You to access our Service or
+    parts of our Service.\n
+  * Affiliate means an entity that controls, is controlled by or is under
+    common control with a party, where "control" means ownership of 50% or
+    more of the shares, equity interest or other securities entitled to vote
+    for election of directors or other managing authority.\n
+  * Application refers to LivePari, the software program provided by the
+    Company.\n
+  * Company (referred to as either "the Company", "We", "Us" or "Our" in this
+    Agreement) refers to LivePari.\n
+  * Country refers to: Uttar Pradesh, India\n
+  * Device means any device that can access the Service such as a computer, a
+    cellphone or a digital tablet.\n
+  * Personal Data is any information that relates to an identified or
+    identifiable individual.\n
+  * Service refers to the Application.\n
+  * Service Provider means any natural or legal person who processes the data
+    on behalf of the Company. It refers to third-party companies or
+    individuals employed by the Company to facilitate the Service, to provide
+    the Service on behalf of the Company, to perform services related to the
+    Service or to assist the Company in analyzing how the Service is used.\n
+  * Third-party Social Media Service refers to any website or any social
+    network website through which a User can log in or create an account to
+    use the Service.\n
+  * Usage Data refers to data collected automatically, either generated by the
+    use of the Service or from the Service infrastructure itself (for example,
+    the duration of a page visit).\n
+  * You means the individual accessing or using the Service, or the company,
+    or other legal entity on behalf of which such individual is accessing or
+    using the Service, as applicable.\n
+
+
+    Collecting and Using Your Personal Data\n
+    \n
+    Types of Data Collected\n
+    \n
+    Personal Data\n
+    \n
+    While using Our Service, We may ask You to provide Us with certain personally
+    identifiable information that can be used to contact or identify You.
+    Personally identifiable information may include, but is not limited to:\n
+    \n
+  * Email address\n
+  * First name and last name\n
+  * Phone number\n
+
+    Information from Third-Party Social Media Services\n
+    \n
+    The Company allows You to create an account and log in to use the Service
+    through the following Third-party Social Media Services:\n
+
+      * Google\n
+    \n
+    If You decide to register through or otherwise grant us access to a Third-
+    Party Social Media Service, We may collect Personal data that is already
+    associated with Your Third-Party Social Media Services account, such as Your
+    name, Your email address, Your activities or Your contact list associated with
+    that account.\n
+
+    You may also have the option of sharing additional information with the
+    Company through Your Third-Party Social Media Services account. If You choose
+    to provide such information and Personal Data, during registration or
+otherwise, You are giving the Company permission to use, share, and store it
+in a manner consistent with this Privacy Policy.\n
+\n
+Information Collected while Using the Application\n
+\n
+While using Our Application, in order to provide features of Our Application,
+We may collect, with Your prior permission:\n
+
+  * Pictures and other information from your Devices camera and photo library\n
+\n
+We use this information to provide features of Our Service, to improve and
+customize Our Service. The information may be uploaded to the Companys
+servers and/or a Service Providers server or it may be simply stored on Your
+device.\n
+
+You can enable or disable access to this information at any time, through Your
+Device settings.\n
+\n
+Use of Your Personal Data\n
+\n
+The Company may use Personal Data for the following purposes:\n
+
+  * To provide and maintain our Service , including to monitor the usage of
+    our Service.\n
+
+  * To manage Your Account: to manage Your registration as a user of the
+    Service. The Personal Data You provide can give You access to different
+    functionalities of the Service that are available to You as a registered
+    user.\n
+
+  * For the performance of a contract: the development, compliance and
+    undertaking of the purchase contract for the products, items or services
+    You have purchased or of any other contract with Us through the Service.\n
+
+  * To contact You: To contact You by email, telephone calls, SMS, or other
+    equivalent forms of electronic communication, such as a mobile
+    applications push notifications regarding updates or informative
+    communications related to the functionalities, products or contracted
+    services, including the security updates, when necessary or reasonable for
+    their implementation.\n
+
+  * To provide You with news, special offers and general information about
+    other goods, services and events which we offer that are similar to those
+    that you have already purchased or enquired about unless You have opted
+    not to receive such information.\n
+
+  * To manage Your requests: To attend and manage Your requests to Us.\n
+
+  * For business transfers: We may use Your information to evaluate or conduct
+    a merger, divestiture, restructuring, reorganization, dissolution, or
+    other sale or transfer of some or all of Our assets, whether as a going
+    concern or as part of bankruptcy, liquidation, or similar proceeding, in
+    which Personal Data held by Us about our Service users is among the assets
+    transferred.\n
+
+  * For other purposes : We may use Your information for other purposes, such
+    as data analysis, identifying usage trends, determining the effectiveness
+    of our promotional campaigns and to evaluate and improve our Service,
+    products, services, marketing and your experience.\n
+
+\n
+We may share Your personal information in the following situations:\n
+\n
+  * With Service Providers: We may share Your personal information with
+    Service Providers to monitor and analyze the use of our Service, to
+    contact You.\n
+  * For business transfers: We may share or transfer Your personal information
+    in connection with, or during negotiations of, any merger, sale of Company
+    assets, financing, or acquisition of all or a portion of Our business to
+    another company.\n
+  * With Affiliates: We may share Your information with Our affiliates, in
+    which case we will require those affiliates to honor this Privacy Policy.
+    Affiliates include Our parent company and any other subsidiaries, joint
+    venture partners or other companies that We control or that are under
+    common control with Us.\n
+  * With business partners: We may share Your information with Our business
+    partners to offer You certain products, services or promotions.\n
+  * With other users: when You share personal information or otherwise
+    interact in the public areas with other users, such information may be
+    viewed by all users and may be publicly distributed outside. If You
+    interact with other users or register through a Third-Party Social Media
+    Service, Your contacts on the Third-Party Social Media Service may see
+    Your name, profile, pictures and description of Your activity. Similarly,
+    other users will be able to view descriptions of Your activity,
+    communicate with You and view Your profile.\n
+  * With Your consent : We may disclose Your personal information for any
+    other purpose with Your consent.\n
+\n
+Retention of Your Personal Data\n
+\n
+The Company will retain Your Personal Data only for as long as is necessary
+for the purposes set out in this Privacy Policy. We will retain and use Your
+Personal Data to the extent necessary to comply with our legal obligations
+(for example, if we are required to retain your data to comply with applicable
+laws), resolve disputes, and enforce our legal agreements and policies.\n
+
+The Company will also retain Usage Data for internal analysis purposes. Usage
+Data is generally retained for a shorter period of time, except when this data
+is used to strengthen the security or to improve the functionality of Our
+Service, or We are legally obligated to retain this data for longer time
+periods.\n
+\n
+Transfer of Your Personal Data\n
+\n
+Your information, including Personal Data, is processed at the Companys
+operating offices and in any other places where the parties involved in the
+processing are located. It means that this information may be transferred to â€”
+and maintained on â€” computers located outside of Your state, province, country
+or other governmental jurisdiction where the data protection laws may differ
+than those from Your jurisdiction.\n
+
+Your consent to this Privacy Policy followed by Your submission of such
+information represents Your agreement to that transfer.\n
+
+The Company will take all steps reasonably necessary to ensure that Your data
+is treated securely and in accordance with this Privacy Policy and no transfer
+of Your Personal Data will take place to an organization or a country unless
+there are adequate controls in place including the security of Your data and
+other personal information.\n
+\n
+Delete Your Personal Data\n
+\n
+You have the right to delete or request that We assist in deleting the
+Personal Data that We have collected about You.\n
+
+Our Service may give You the ability to delete certain information about You
+from within the Service.\n
+
+You may update, amend, or delete Your information at any time by signing in to
+Your Account, if you have one, and visiting the account settings section that
+allows you to manage Your personal information. You may also contact Us to
+request access to, correct, or delete any personal information that You have
+provided to Us.\n
+
+Please note, however, that We may need to retain certain information when we
+have a legal obligation or lawful basis to do so.\n
+\n
+Disclosure of Your Personal Data\n
+\n
+Business Transactions\n
+\n
+If the Company is involved in a merger, acquisition or asset sale, Your
+Personal Data may be transferred. We will provide notice before Your Personal
+Data is transferred and becomes subject to a different Privacy Policy.\n
+\n
+Law enforcement\n
+\n
+Under certain circumstances, the Company may be required to disclose Your
+Personal Data if required to do so by law or in response to valid requests by
+public authorities (e.g. a court or a government agency).\n
+\n
+Other legal requirements\n
+\n
+The Company may disclose Your Personal Data in the good faith belief that such
+action is necessary to:\n
+
+  * Comply with a legal obligation\n
+  * Protect and defend the rights or property of the Company\n
+  * Prevent or investigate possible wrongdoing in connection with the Service\n
+  * Protect the personal safety of Users of the Service or the public\n
+  * Protect against legal liability\n
+\n
+Security of Your Personal Data\n
+\n
+The security of Your Personal Data is important to Us, but remember that no
+method of transmission over the Internet, or method of electronic storage is
+100% secure. While We strive to use commercially acceptable means to protect
+Your Personal Data, We cannot guarantee its absolute security.\n
+\n
+
+Changes to this Privacy Policy\n
+==============================\n
+\n
+We may update Our Privacy Policy from time to time. We will notify You of any
+changes by posting the new Privacy Policy on this page.\n
+
+You are advised to review this Privacy Policy periodically for any changes.
+Changes to this Privacy Policy are effective when they are posted on this
+page.\n
+\n
+Contact Us\n
+\n
+If you have any questions about this Privacy Policy, You can contact us:\n
+
+  * By email: care.livePari@gmail.com
+
+
+
+    </string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#1C2F6A</color>
+    <color name="dark_1">#181A20</color>
+    <color name="teal_A200">#64FFDA</color>
+    <color name="dark_3">#35383F</color>
+    <color name="dark_2">#1F222A</color>
+    <color name="alert">#F75555</color>
+    <color name="red_800">#C62828</color>
+    <color name="red_900">#B71C1C</color>
+    <color name="gray_500">#9E9E9E</color>
+    <color name="pink_600">#D81B60</color>
+    <color name="blueGray_50">#DEDEDE</color>
+    <color name="lightGreen_A200">#B2FF59</color>
+    <color name="red_A200">#FF5252</color>
+    <color name="green_A400">#00E676</color>
+    <color name="orange_800">#EF6C00</color>
+    <color name="deepOrange_500">#FF5722</color>
+    <color name="indigo_900">#1A237E</color>
+    <color name="indigo_500">#3F51B5</color>
+    <color name="red_600">#E53935</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="yellow_500">#ffd700</color>
+    <color name="neumorph_shadowColorLight">#B5FFFFFF</color>
+    <color name="neumorph_shadowColorDark">#D89A9A9A</color>
+</resources>
