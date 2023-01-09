@@ -31,11 +31,13 @@
             android:layout_above="@id/agree_button"
             android:layout_marginHorizontal="10dp" >
 
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/money_icon"
-                android:layout_width="75dp"
-                android:layout_height="85dp"
-                android:src="@drawable/balance_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:lottie_rawRes="@raw/wallet"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="50dp"
@@ -48,18 +50,19 @@
                 android:layout_alignTop="@id/money_icon"
                 android:layout_alignBottom="@id/money_icon"
                 android:gravity="center"
-                android:layout_marginStart="135dp"
+                android:layout_marginStart="155dp"
                 android:layout_alignParentStart="true"
                 android:textSize="26sp"
-                android:textColor="@color/red_900"
+                android:textColor="@color/dark_3"
                 android:text="@string/huge_earnings"
                 android:fontFamily="@font/dubai_bold"
                 />
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/model_icon"
-                android:layout_width="75dp"
-                android:layout_height="85dp"
-                android:src="@drawable/model_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:lottie_rawRes="@raw/privacy"
+                app:lottie_autoPlay="true"
                 android:layout_below="@id/money_icon"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="75dp"
@@ -71,19 +74,20 @@
                 android:layout_marginStart="20dp"
                 android:textSize="26sp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="135dp"
+                android:layout_marginEnd="155dp"
                 android:layout_alignTop="@id/model_icon"
                 android:gravity="center"
                 android:layout_alignBottom="@id/model_icon"
-                android:textColor="@color/purple_700"
+                android:textColor="@color/dark_3"
                 android:text="@string/privacy_in_hands"
                 android:fontFamily="@font/dubai_bold"
                 />
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/remote_icon"
-                android:layout_width="75dp"
-                android:layout_height="85dp"
-                android:src="@drawable/working_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:lottie_rawRes="@raw/work_from_home"
+                app:lottie_autoPlay="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@id/model_icon"
                 android:layout_marginTop="75dp"
@@ -95,11 +99,11 @@
                 android:layout_marginEnd="20dp"
                 android:textSize="26sp"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="135dp"
+                android:layout_marginStart="155dp"
                 android:layout_alignTop="@id/remote_icon"
                 android:layout_alignBottom="@id/remote_icon"
                 android:gravity="center"
-                android:textColor="@color/indigo_500"
+                android:textColor="@color/dark_3"
                 android:text="@string/earn_from_home"
                 android:fontFamily="@font/dubai_bold"
                 />
@@ -118,5 +122,17 @@
             android:textSize="16sp"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/agree_button"
+            android:layout_alignBottom="@id/agree_button"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/gray_500"
+            android:fontFamily="@font/sans_bold"
+            android:text="Continue only if you are 18+"/>
        </RelativeLayout>
 </layout>
