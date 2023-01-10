@@ -20,12 +20,8 @@ import com.google.gson.GsonBuilder
 import com.razorpay.Checkout
 import org.json.JSONObject
 import java.lang.Exception
-import java.math.BigDecimal
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.math.roundToInt
-import kotlin.math.roundToLong
 
 
 class MyRepository(
@@ -112,15 +108,7 @@ class MyRepository(
         mFDb.reference.child("Profiles").child(mFAuth.currentUser!!.uid)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val user = User(
-                        snapshot.child("age").value.toString(),
-                        snapshot.child("balance").value.toString(),
-                        snapshot.child("model").value.toString().toBoolean(),
-                        snapshot.child("verified").value.toString().toBoolean(),
-                        snapshot.child("name").value.toString(),
-                        snapshot.child("profilePic").value.toString(),
-                        null
-                    )
+                    val user = snapshot.getValue(User::class.java)!!
                     if(user.model){
                         mFDb.reference.child("Pricing").child("pricingForModel").addValueEventListener(object :ValueEventListener{
                             override fun onDataChange(snapshot: DataSnapshot) {
@@ -412,7 +400,7 @@ class MyRepository(
                     requestId = requestId,
                     uid = myUid,
                     status = "Processing",
-                    isCompleted = false,
+                    completed = false,
                     acName = accountName,
                     acNumber = accountNumber,
                     amount = amount,
@@ -717,7 +705,7 @@ class MyRepository(
                     if (snapshot.childrenCount > 0) {
                         var request: WithdrawRequest? = null
                         snapshot.children.forEach {
-                            if (it.child("isCompleted").value != true)
+                            if (it.child("completed").value != true)
                                 request = it.getValue(WithdrawRequest::class.java)!!
                         }
                         _haveWithdrawRequests.postValue(request)

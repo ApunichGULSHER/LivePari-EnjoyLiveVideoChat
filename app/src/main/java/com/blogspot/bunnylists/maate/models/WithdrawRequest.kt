@@ -11,8 +11,8 @@ data class WithdrawRequest(
     val uid: String?,
     @PropertyName("status")
     val status: String?,
-    @PropertyName("isCompleted")
-    val isCompleted: Boolean,
+    @PropertyName("completed")
+    val completed: Boolean,
     @PropertyName("acName")
     val acName: String?,
     @PropertyName("acNumber")
