@@ -1,5 +1,6 @@
 package com.blogspot.bunnylists.maate.activities.MainScreens
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -100,6 +101,7 @@ class WithdrawBalanceScreen : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mViewModel.user.observe(requireActivity()){

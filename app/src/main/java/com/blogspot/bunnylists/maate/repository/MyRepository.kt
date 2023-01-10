@@ -1,5 +1,6 @@
 package com.blogspot.bunnylists.maate.repository
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -392,6 +393,7 @@ class MyRepository(
         })
     }
 
+    @SuppressLint("SimpleDateFormat")
     fun withdrawBalance(
         amount: Int,
         accountName: String,
@@ -410,6 +412,7 @@ class MyRepository(
                     requestId = requestId,
                     uid = myUid,
                     status = "Processing",
+                    isCompleted = false,
                     acName = accountName,
                     acNumber = accountNumber,
                     amount = amount,
@@ -714,7 +717,7 @@ class MyRepository(
                     if (snapshot.childrenCount > 0) {
                         var request: WithdrawRequest? = null
                         snapshot.children.forEach {
-                            if (it.child("status").value == "Processing")
+                            if (it.child("isCompleted").value != true)
                                 request = it.getValue(WithdrawRequest::class.java)!!
                         }
                         _haveWithdrawRequests.postValue(request)

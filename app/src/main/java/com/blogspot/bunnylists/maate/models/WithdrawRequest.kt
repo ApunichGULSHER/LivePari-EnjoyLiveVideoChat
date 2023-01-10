@@ -11,6 +11,8 @@ data class WithdrawRequest(
     val uid: String?,
     @PropertyName("status")
     val status: String?,
+    @PropertyName("isCompleted")
+    val isCompleted: Boolean,
     @PropertyName("acName")
     val acName: String?,
     @PropertyName("acNumber")
@@ -22,5 +24,5 @@ data class WithdrawRequest(
     @PropertyName("time")
     val time: String?
 ){
-    constructor() : this("","","","",0,0,"","")
+    constructor() : this("","","",true,"",0,0,"","")
 }
