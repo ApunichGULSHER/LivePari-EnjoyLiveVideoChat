@@ -80,6 +80,9 @@ class MainScreenViewModel(
     val royalCallsPrice: LiveData<String>
         get() = repository.royalLobbyCallsPrice
 
+    val callAdTimeGap: LiveData<Long>
+        get() = repository.callAdTimeGap
+
     val paymentInitTask: LiveData<NetworkResult<String>>
         get() = repository.paymentInitTask
 

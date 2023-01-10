@@ -4,6 +4,9 @@ import android.app.Application
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.blogspot.bunnylists.maate.repository.MyRepository
 import com.google.android.gms.ads.MobileAds
+import com.google.firebase.FirebaseApp
+import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.functions.FirebaseFunctions
@@ -17,6 +20,10 @@ class MyApplication : Application() {
     lateinit var mFunctions: FirebaseFunctions
     override fun onCreate() {
         super.onCreate()
+        FirebaseApp.initializeApp(applicationContext)
+        FirebaseAppCheck.getInstance().installAppCheckProviderFactory(
+            PlayIntegrityAppCheckProviderFactory.getInstance()
+        )
         initialize()
     }
 

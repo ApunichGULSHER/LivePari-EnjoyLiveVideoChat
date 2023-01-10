@@ -278,11 +278,11 @@ class CallScreen : Fragment() {
         bind.micButton.setOnClickListener {
             if (micEnabled) {
                 agoraEngine!!.muteLocalAudioStream(true)
-                bind.micButton.setImageDrawable(requireContext().getDrawable(R.drawable.mic_on))
+                bind.micButton.setImageDrawable(requireContext().getDrawable(R.drawable.mic_off))
                 makeToast("Mic turned off")
             } else {
                 agoraEngine!!.muteLocalAudioStream(false)
-                bind.micButton.setImageDrawable(requireContext().getDrawable(R.drawable.mic_off))
+                bind.micButton.setImageDrawable(requireContext().getDrawable(R.drawable.mic_on))
                 makeToast("Mic turned on")
             }
             micEnabled = !micEnabled
@@ -291,11 +291,11 @@ class CallScreen : Fragment() {
         bind.videoButton.setOnClickListener {
             if (webcamEnabled) {
                 agoraEngine!!.muteLocalVideoStream(true)
-                bind.videoButton.setImageDrawable(requireContext().getDrawable(R.drawable.videocam_on))
+                bind.videoButton.setImageDrawable(requireContext().getDrawable(R.drawable.videocam_off))
                 makeToast("Camera turned off")
             } else {
                 agoraEngine!!.muteLocalVideoStream(false)
-                bind.videoButton.setImageDrawable(requireContext().getDrawable(R.drawable.videocam_off))
+                bind.videoButton.setImageDrawable(requireContext().getDrawable(R.drawable.videocam_on))
                 makeToast("Camera turned on")
             }
             webcamEnabled = !webcamEnabled
@@ -321,7 +321,7 @@ class CallScreen : Fragment() {
     }
 
     private fun getNewAdTimer(): CountDownTimer {
-        return object : CountDownTimer(90000, 1000) {
+        return object : CountDownTimer(mViewModel.callAdTimeGap.value!!, 1000) {
             override fun onTick(millisUntilFinished: Long) {
 
             }

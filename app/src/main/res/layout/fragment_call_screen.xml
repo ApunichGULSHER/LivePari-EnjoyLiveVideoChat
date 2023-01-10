@@ -59,13 +59,13 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginEnd="20dp"
-                    android:src="@drawable/mic_off" />
+                    android:src="@drawable/mic_on" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/video_button"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/videocam_off"
+                    android:src="@drawable/videocam_on"
                     android:layout_marginEnd="40dp"/>
             </LinearLayout>
 

@@ -15,6 +15,7 @@ import com.google.firebase.Timestamp
 import com.google.firebase.auth.*
 import com.google.firebase.database.*
 import com.google.firebase.functions.FirebaseFunctions
+import com.google.firebase.functions.FirebaseFunctionsException
 import com.google.firebase.storage.FirebaseStorage
 import com.google.gson.GsonBuilder
 import com.razorpay.Checkout
@@ -49,10 +50,13 @@ class MyRepository(
     private val _agoraToken = MutableLiveData<Any?>(null)
     private val _channelName = MutableLiveData<Any?>()
     private val _royalLobbyCallsPrice= MutableLiveData<String>()
+    private val _callAdTImeGap= MutableLiveData<Long>()
     var currentLobbyType = ""
 
     val royalLobbyCallsPrice: LiveData<String>
         get() = _royalLobbyCallsPrice
+    val callAdTimeGap: LiveData<Long>
+        get() = _callAdTImeGap
 
     val haveWithdrawRequests: LiveData<WithdrawRequest?>
         get() = _haveWithdrawRequests
@@ -109,18 +113,18 @@ class MyRepository(
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val user = snapshot.getValue(User::class.java)!!
+                    mFDb.reference.child("Utils").child("interstitialAdGap").get().addOnSuccessListener {
+                        _callAdTImeGap.postValue(it.value.toString().toLong())
+                    }
                     if(user.model){
-                        mFDb.reference.child("Pricing").child("pricingForModel").addValueEventListener(object :ValueEventListener{
+                        mFDb.reference.child("Utils").child("pricingForModel").addValueEventListener(object :ValueEventListener{
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 _royalLobbyCallsPrice.postValue(snapshot.value.toString())
                             }
-
-                            override fun onCancelled(error: DatabaseError) {
-
-                            }
+                            override fun onCancelled(error: DatabaseError) {}
                         })
                     }else{
-                        mFDb.reference.child("Pricing").child("pricingForNormalUser").addValueEventListener(object : ValueEventListener{
+                        mFDb.reference.child("Utils").child("pricingForNormalUser").addValueEventListener(object : ValueEventListener{
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 _royalLobbyCallsPrice.postValue(snapshot.value.toString())
                             }
@@ -553,9 +557,6 @@ class MyRepository(
         _paymentInitTask.postValue(NetworkResult.Loading())
         createOrderID(amount).addOnCompleteListener {
             if (it.isSuccessful) {
-                if (it is Exception) {
-                    _paymentInitTask.postValue(NetworkResult.Error(massage = it.exception!!.localizedMessage))
-                } else {
                     val result = it.result as Map<*, *>
                     co.setKeyID(result["keyID"] as String)
                     val options = JSONObject()
@@ -576,9 +577,11 @@ class MyRepository(
                     options.put("prefill",prefill)
 
                     _paymentInitTask.postValue(NetworkResult.Success(data = options))
-                }
-            } else {
-                _paymentInitTask.postValue(NetworkResult.Error(massage = it.exception!!.localizedMessage))
+                }else{
+                    if(it.exception is FirebaseFunctionsException)
+                        _paymentInitTask.postValue(NetworkResult.Error(massage = (it.exception as FirebaseFunctionsException).details.toString()))
+                    else
+                        _paymentInitTask.postValue(NetworkResult.Error(massage = it.exception!!.localizedMessage))
             }
         }
     }
@@ -593,7 +596,6 @@ class MyRepository(
             .getHttpsCallable("getRazorpayOrderId")
             .call(data)
             .continueWith { task ->
-                try {
                     val gson = GsonBuilder().create()
                     val result = task.result?.data as Map<*, *>
                     val keyId = result["keyId"] as String
@@ -601,9 +603,6 @@ class MyRepository(
                     val jsonString = JSONObject(jsonOrder).toString()
                     val order: RazorpayOrder = gson.fromJson(jsonString, RazorpayOrder::class.java)
                     mapOf("keyID" to keyId, "OrderID" to order.id!!)
-                } catch (e: Exception) {
-                    e.localizedMessage
-                }
             }
     }
 
