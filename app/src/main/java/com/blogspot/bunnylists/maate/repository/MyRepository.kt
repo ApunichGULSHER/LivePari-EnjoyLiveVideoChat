@@ -571,10 +571,9 @@ class MyRepository(
                     retryObj.put("max_count", 4)
                     options.put("retry", retryObj)
 
-                    val prefill = JSONObject()
-                    prefill.put("email","${mFAuth.currentUser?.uid}@uid.com")
-                    prefill.put("contact","919876543210")
-                    options.put("prefill",prefill)
+                    val notesObj = JSONObject()
+                    notesObj.put("UID", mFAuth.currentUser?.uid.toString())
+                    options.put("notes", notesObj)
 
                     _paymentInitTask.postValue(NetworkResult.Success(data = options))
                 }else{
