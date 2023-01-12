@@ -1,6 +1,5 @@
 package com.blogspot.bunnylists.maate.activities.MainScreens
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.*
 import android.view.Gravity
@@ -8,6 +7,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -21,7 +21,6 @@ import com.blogspot.bunnylists.maate.Utils.NetworkResult
 import com.blogspot.bunnylists.maate.databinding.ActivityMainBinding
 import com.blogspot.bunnylists.maate.models.LoadingDialog
 import com.blogspot.bunnylists.maate.viewModels.MainScreenViewModel
-import com.google.android.gms.ads.MobileAds
 import com.razorpay.Checkout
 import com.razorpay.PaymentResultListener
 import com.thecode.aestheticdialogs.*
@@ -40,6 +39,9 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
         MainScreenViewModel.provideFactory((application as MyApplication).repository, this)
     }
 
+    val singleClickPattern = longArrayOf(0, 10)
+    val singleClickAmplitude = intArrayOf(0, 180)
+
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +49,12 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
         bind = DataBindingUtil.setContentView(this, R.layout.activity_main)
         connectivityObserver = NetworkConnectivityObserver(applicationContext)
         loadingDialog = LoadingDialog(this)
-        vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
+        vibrationEffect = if(Build.VERSION.SDK_INT >= 29){
+            VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
+        }else{
+            VibrationEffect.createWaveform(singleClickPattern, singleClickAmplitude, -1)
+        }
+
         vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
             vibratorManager.defaultVibrator
