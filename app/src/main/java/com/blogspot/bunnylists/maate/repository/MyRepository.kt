@@ -109,31 +109,27 @@ class MyRepository(
     fun getCurrentUserData() {
         _roomFound.postValue(false)
         _gettingUserDataTask.postValue(NetworkResult.Loading())
+        mFDb.reference.child("Utils").child("interstitialAdGap").get().addOnSuccessListener {
+            _callAdTImeGap.postValue(it.value.toString().toLong())
+        }.addOnFailureListener{
+            _gettingUserDataTask.postValue(NetworkResult.Error(massage = it.localizedMessage))
+        }
         mFDb.reference.child("Profiles").child(mFAuth.currentUser!!.uid)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val user = snapshot.getValue(User::class.java)!!
-                    mFDb.reference.child("Utils").child("interstitialAdGap").get().addOnSuccessListener {
-                        _callAdTImeGap.postValue(it.value.toString().toLong())
-                    }
                     if(user.model){
-                        mFDb.reference.child("Utils").child("pricingForModel").addValueEventListener(object :ValueEventListener{
-                            override fun onDataChange(snapshot: DataSnapshot) {
-                                _royalLobbyCallsPrice.postValue(snapshot.value.toString())
-                            }
-                            override fun onCancelled(error: DatabaseError) {}
-                        })
+                        mFDb.reference.child("Utils").child("pricingForModel").get().addOnSuccessListener {
+                            _royalLobbyCallsPrice.postValue(it.value.toString())
+                        }.addOnFailureListener{
+                            _gettingUserDataTask.postValue(NetworkResult.Error(massage = it.localizedMessage))
+                        }
                     }else{
-                        mFDb.reference.child("Utils").child("pricingForNormalUser").addValueEventListener(object : ValueEventListener{
-                            override fun onDataChange(snapshot: DataSnapshot) {
-                                _royalLobbyCallsPrice.postValue(snapshot.value.toString())
-                            }
-
-                            override fun onCancelled(error: DatabaseError) {
-
-                            }
-
-                        })
+                        mFDb.reference.child("Utils").child("pricingForNormalUser").get().addOnSuccessListener {
+                            _royalLobbyCallsPrice.postValue(it.value.toString())
+                        }.addOnFailureListener{
+                            _gettingUserDataTask.postValue(NetworkResult.Error(massage = it.localizedMessage))
+                        }
                     }
                     _user.postValue(user)
                     _gettingUserDataTask.postValue(NetworkResult.Success())

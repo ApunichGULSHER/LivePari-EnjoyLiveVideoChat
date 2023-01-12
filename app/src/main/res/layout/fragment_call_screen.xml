@@ -148,7 +148,7 @@
             android:layout_alignParentBottom="true"
             ads:adSize="BANNER"
             android:visibility="gone"
-            ads:adUnitId="@string/Test_Banner_AD">
+            ads:adUnitId="@string/Live_Banner_AD">
 
         </com.google.android.gms.ads.AdView>
     </RelativeLayout>

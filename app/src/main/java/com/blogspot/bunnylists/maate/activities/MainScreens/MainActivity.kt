@@ -106,6 +106,9 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
                 }
                 is NetworkResult.Error -> {
                     loadingDialog.isDismiss()
+                    if(it.massage!=null)
+                        Toast.makeText(this, "Please try later! ${it.massage}", Toast.LENGTH_SHORT).show()
+                    finishAffinity()
                 }
             }
         }
@@ -136,7 +139,9 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
             ft.setCustomAnimations(R.anim.pop_enter, R.anim.pop_exit, R.anim.enter, R.anim.exit)
 
         vibrator.cancel()
-        vibrator.vibrate(vibrationEffect)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(vibrationEffect)
+        }
         ft.replace(R.id.fragment_container, fragment)
         ft.commit()
     }

@@ -369,7 +369,7 @@ class CallScreen : Fragment() {
     private fun loadAd() {
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(requireContext(),
-            getString(R.string.Test_Interstitial_AD),
+            getString(R.string.Live_Interstitial_AD),
             adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {

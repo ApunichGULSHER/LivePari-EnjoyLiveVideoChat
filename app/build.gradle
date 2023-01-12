@@ -10,9 +10,9 @@ android {
     compileSdk 33
     defaultConfig {
         applicationId "com.blogspot.bunnylists.maate"
-        minSdk 26
+        minSdk 22
         targetSdk 33
-        versionCode 3
+        versionCode 6
         versionName "v1.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
