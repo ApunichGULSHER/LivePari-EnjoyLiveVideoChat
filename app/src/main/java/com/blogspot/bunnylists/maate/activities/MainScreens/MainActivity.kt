@@ -2,6 +2,7 @@ package com.blogspot.bunnylists.maate.activities.MainScreens
 
 import android.content.Context
 import android.os.*
+import android.os.Build.VERSION.SDK_INT
 import android.view.Gravity
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -33,34 +34,27 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
     internal lateinit var bind: ActivityMainBinding
     private lateinit var connectivityObserver: ConnectivityObserver
     private lateinit var loadingDialog: LoadingDialog
-    private lateinit var vibrator: Vibrator
-    private lateinit var vibrationEffect: VibrationEffect
     private val mViewModel: MainScreenViewModel by viewModels() {
         MainScreenViewModel.provideFactory((application as MyApplication).repository, this)
     }
+    private lateinit var vib: Vibrator
 
-    val singleClickPattern = longArrayOf(0, 10)
-    val singleClickAmplitude = intArrayOf(0, 180)
-
-    @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Checkout.preload(applicationContext)
         bind = DataBindingUtil.setContentView(this, R.layout.activity_main)
         connectivityObserver = NetworkConnectivityObserver(applicationContext)
         loadingDialog = LoadingDialog(this)
-        vibrationEffect = if(Build.VERSION.SDK_INT >= 29){
-            VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
-        }else{
-            VibrationEffect.createWaveform(singleClickPattern, singleClickAmplitude, -1)
-        }
 
-        vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-            vibratorManager.defaultVibrator
-        } else {
-            @Suppress("DEPRECATION")
-            getSystemService(VIBRATOR_SERVICE) as Vibrator
+        if(SDK_INT >= Build.VERSION_CODES.O) {
+            vib = if (SDK_INT >= Build.VERSION_CODES.S) {
+                val vibratorManager =
+                    getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                vibratorManager.defaultVibrator
+            } else {
+                @Suppress("DEPRECATION")
+                getSystemService(VIBRATOR_SERVICE) as Vibrator
+            }
         }
 
         bind.bottomBar.onItemSelected = {
@@ -145,10 +139,16 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
         else
             ft.setCustomAnimations(R.anim.pop_enter, R.anim.pop_exit, R.anim.enter, R.anim.exit)
 
-        vibrator.cancel()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            vibrator.vibrate(vibrationEffect)
+        if(SDK_INT >= Build.VERSION_CODES.O){
+            if (SDK_INT >= Build.VERSION_CODES.Q) {
+                val vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
+                vib.cancel()
+                vib.vibrate(vibrationEffect)
+            }else{
+                vib.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE) )
+            }
         }
+
         ft.replace(R.id.fragment_container, fragment)
         ft.commit()
     }
@@ -158,9 +158,6 @@ class MainActivity : AppCompatActivity(), PaymentResultListener {
         val secondaryScreen: Fragment? =
             supportFragmentManager.findFragmentById(R.id.fragment_container)
         val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-
-//        if (supportFragmentManager.backStackEntryCount > 0)
-//            supportFragmentManager.popBackStack()
 
         when {
             mainScreen is CallScreen -> {
